@@ -1,0 +1,18 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model Application
+
+@if (Model.CreeperStalker == false)
+{
+    <h2>Application Received. Thank you, @Model.FirstName.</h2>
+    <h3>You're lucky to have a shot at me :)</h3>
+}
+else
+{
+    <h2>Oopsie forgot that I'm in a relationship.</h2>
+}
+
