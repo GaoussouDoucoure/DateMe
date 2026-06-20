@@ -8,7 +8,8 @@
 
 <h1>Dating Application</h1>
 
-<form method="post">
+<form method="post">    @* Post this information from the form to the program, that's what POST is here for,
+                           in that way after hitting submit it won't post the information to the URL*@
 
     <label asp-for="FirstName">First Name:</label>
     <input asp-for="FirstName" />
@@ -25,15 +26,18 @@
     <label asp-for="Major">Major:</label>
     <input asp-for="Major" />
     <br />
-    <label asp-for="Occupation">Occupation:</label>
-    <input asp-for="Occupation"/>
-    <br />
     <label asp-for="CreeperStalker">Are you a Creeper and/or a Stalker?</label>
     <select asp-for="CreeperStalker">
         <option value="true">Yes</option>
         <option value="false">No</option>
     </select>
     <br />
+
+    @* 
+       After bringing in the model Application.cs and adding those asp-for...
+       now this DatingApplication.cshtml is bound to Application.cs so whenever
+       someone submit the form we get an instance of the Application.cs for it
+    *@
 
     <button type="submit">Submit Application</button>
 

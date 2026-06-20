@@ -1,14 +1,19 @@
-﻿namespace DateMe.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace DateMe.Models
 {
-    public class Application
+    public class Application   // this is eventually going to be a table and this is the name
     {
-        public int AplicatinID { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public int Age { get; set; }
-        public string PhoneNumber { get; set; }
-        public string Major { get; set; }
-        public string Occupation { get; set; }
-        public bool CreeperStalker { get; set; }
+        [Key] //setting ApplicationID as primary key
+        [Required] // to make it required
+        public int AplicationID { get; set; }   // this will be a field and use as primary key
+        public string FirstName { get; set; }   // this will be a field in the table
+        public string LastName { get; set; }    // this will be a field in the table
+        //[Range(0, 130)] // this is if we want to set a range for age in the database
+        public int Age { get; set; }            // this will be a field in the table
+        public string PhoneNumber { get; set; } // this will be a field in the table
+        public string Major { get; set; }       // this will be a field in the table
+        public bool CreeperStalker { get; set; } // this will be a field in the table
     }
+    /* This model is basically going to hold information from our form DatingApplication.cshtml */
 }
