@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DateMe.Models
 {
@@ -12,7 +13,11 @@ namespace DateMe.Models
         //[Range(0, 130)] // this is if we want to set a range for age in the database
         public int Age { get; set; }            // this will be a field in the table
         public string PhoneNumber { get; set; } // this will be a field in the table
-        public string Major { get; set; }       // this will be a field in the table
+        [ForeignKey("MajorId")]
+        public int MajorId { get; set; }       // this will be a field in the table
+        public Major Major { get; set; }
+        /* from line 16 to 18 we're basically saying that the majorid from this Application table
+           will be the foreign key of an object in Major table. Basically link them. */
         public bool CreeperStalker { get; set; } // this will be a field in the table
     }
     /* This model is basically going to hold information from our form DatingApplication.cshtml */

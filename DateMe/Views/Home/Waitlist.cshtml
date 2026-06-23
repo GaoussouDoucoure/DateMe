@@ -1,0 +1,38 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model List<Application>    //because we're turning it into a List (.ToList) in the action in HomeController
+@* bringing in the model(data) to use *@
+
+<table class="table table-bordered">
+
+    <thead class="fw-bold">
+        <tr>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Age</td>
+            <td>Phone</td>
+            <td>Major</td>
+            <td>Creeper and/or Stalker</td>
+        </tr>
+    </thead>
+
+    @foreach (var x in Model)   //doing a foreach to loop through the List we're getting back from (.ToList)
+    {
+        <tbody>
+            <tr>
+                <td>@x.FirstName</td>
+                <td>@x.LastName</td>
+                <td>@x.Age</td>
+                <td>@x.PhoneNumber</td>
+                <td>@x.Major</td>
+                <td>@x.CreeperStalker</td>
+            </tr>
+        </tbody>
+    }
+
+
+</table>

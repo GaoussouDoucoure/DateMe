@@ -23,8 +23,13 @@
     <label asp-for="PhoneNumber">Phone:</label>
     <input asp-for="PhoneNumber" />
     <br />
-    <label asp-for="Major">Major:</label>
-    <input asp-for="Major" />
+    <select asp-for="MajorId">
+        <option value="">Select a Major</option>
+        @foreach (Major m in ViewBag.Majors)
+                {
+                    <option value="@m.MajorId">@m.MajorName</option>
+                }
+            </select>
     <br />
     <label asp-for="CreeperStalker">Are you a Creeper and/or a Stalker?</label>
     <select asp-for="CreeperStalker">
