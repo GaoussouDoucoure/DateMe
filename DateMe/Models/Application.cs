@@ -7,15 +7,17 @@ namespace DateMe.Models
     {
         [Key] //setting ApplicationID as primary key
         [Required] // to make it required
-        public int AplicationID { get; set; }   // this will be a field and use as primary key
+        public int ApplicationId { get; set; }   // this will be a field and use as primary key
+        [Required(ErrorMessage = "Sorry, you need to enter a first name")]
         public string FirstName { get; set; }   // this will be a field in the table
-        public string LastName { get; set; }    // this will be a field in the table
-        //[Range(0, 130)] // this is if we want to set a range for age in the database
-        public int Age { get; set; }            // this will be a field in the table
+        public string? LastName { get; set; }    // the ? means optional
+        [Range(0, 130, ErrorMessage = "You must enter a valid age")] // this is if we want to set a range for age in the database
+        public int Age { get; set; } = 0;        // giving default value to age
+        [MaxLength(15)]     // Setting max length for phone number
         public string PhoneNumber { get; set; } // this will be a field in the table
         [ForeignKey("MajorId")]
-        public int MajorId { get; set; }       // this will be a field in the table
-        public Major Major { get; set; }
+        public int? MajorId { get; set; }       // this will be a field in the table
+        public Major? Major { get; set; }
         /* from line 16 to 18 we're basically saying that the majorid from this Application table
            will be the foreign key of an object in Major table. Basically link them. */
         public bool CreeperStalker { get; set; } // this will be a field in the table

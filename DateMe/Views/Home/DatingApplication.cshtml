@@ -11,6 +11,10 @@
 <form method="post">    @* Post this information from the form to the program, that's what POST is here for,
                            in that way after hitting submit it won't post the information to the URL*@
 
+    <input type="hidden" asp-for="ApplicationId" /> 
+    @* We didn't have the input field before for ApplicationId but we had to add it after add the Edit capability
+       so when we edit the ApplicationId that is clicked on is what's kept and helps update the record rather
+       than creating a new record with new ApplicationId, which is what will happen if we didn't add this field *@
     <label asp-for="FirstName">First Name:</label>
     <input asp-for="FirstName" />
     <br />
@@ -45,5 +49,8 @@
     *@
 
     <button type="submit">Submit Application</button>
+
+    <div asp-validation-summary="All"></div>    
+    @* this above will generation error messages if user don't fill out required fields *@
 
 </form>

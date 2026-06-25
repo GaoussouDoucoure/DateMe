@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DateMe.Migrations
 {
     [DbContext(typeof(DatingApplicationContext))]
-    [Migration("20260623050838_Initial")]
+    [Migration("20260623062300_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -21,7 +21,7 @@ namespace DateMe.Migrations
 
             modelBuilder.Entity("DateMe.Models.Application", b =>
                 {
-                    b.Property<int>("AplicationID")
+                    b.Property<int>("ApplicationId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -46,7 +46,7 @@ namespace DateMe.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.HasKey("AplicationID");
+                    b.HasKey("ApplicationId");
 
                     b.HasIndex("MajorId");
 

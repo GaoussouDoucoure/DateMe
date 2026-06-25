@@ -29,7 +29,7 @@ namespace DateMe.Migrations
                 name: "Applications",
                 columns: table => new
                 {
-                    AplicationID = table.Column<int>(type: "INTEGER", nullable: false)
+                    ApplicationId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     FirstName = table.Column<string>(type: "TEXT", nullable: false),
                     LastName = table.Column<string>(type: "TEXT", nullable: false),
@@ -40,7 +40,7 @@ namespace DateMe.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Applications", x => x.AplicationID);
+                    table.PrimaryKey("PK_Applications", x => x.ApplicationId);
                     table.ForeignKey(
                         name: "FK_Applications_Majors_MajorId",
                         column: x => x.MajorId,

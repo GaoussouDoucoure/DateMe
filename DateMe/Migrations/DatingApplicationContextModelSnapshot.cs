@@ -18,7 +18,7 @@ namespace DateMe.Migrations
 
             modelBuilder.Entity("DateMe.Models.Application", b =>
                 {
-                    b.Property<int>("AplicationID")
+                    b.Property<int>("ApplicationId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -43,7 +43,7 @@ namespace DateMe.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.HasKey("AplicationID");
+                    b.HasKey("ApplicationId");
 
                     b.HasIndex("MajorId");
 
